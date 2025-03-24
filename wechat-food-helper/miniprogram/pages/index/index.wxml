@@ -1,0 +1,23 @@
+<view class="container">
+  <view class="title">今天吃什么</view>
+  
+  <view class="result-container {{isAnimating ? 'animating' : ''}}">
+    <view class="result-category" wx:if="{{selectedFood}}">
+      {{selectedFood.category}}
+    </view>
+    <view class="result-item" wx:if="{{selectedFood}}">
+      {{selectedFood.item}}
+    </view>
+    <view class="placeholder" wx:else>
+      点击下方按钮获取推荐
+    </view>
+  </view>
+
+  <view class="button-container">
+    <button class="random-button {{isAnimating ? 'disabled' : ''}}" 
+            bindtap="randomFood" 
+            disabled="{{isAnimating}}">
+      随机推荐
+    </button>
+  </view>
+</view>
